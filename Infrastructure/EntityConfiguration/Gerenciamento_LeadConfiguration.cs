@@ -21,7 +21,7 @@ namespace Infrastructure.EntityConfiguration
             builder.Property(b => b.Category).HasMaxLength(50);
             builder.Property(b => b.Description).HasMaxLength(255);
             builder.Property(b => b.Price).HasColumnType("decimal(10,2)");
-            builder.Property(b => b.Accepted).HasDefaultValue(false);
+            builder.Property(b => b.Accepted).HasDefaultValue('A');
 
             builder.HasData(
                 new Gerenciamento_Lead
@@ -61,6 +61,32 @@ namespace Infrastructure.EntityConfiguration
                     Category = "Diarista",
                     Description = "Descrição xxxxxxxxxxxxxxxxxx",
                     Price = 50,
+                    Accepted = 'A'
+                },
+                new Gerenciamento_Lead
+                {
+                    Contact_First_Name = "Albert",
+                    Contact_Full_Name = "Albert Pereira",
+                    Contact_Phone_Number = "55-98-988876655",
+                    Contact_Email = "pereira@yahoo.com",
+                    Date_Created = DateTime.UtcNow,
+                    Suburb = "Não sei",
+                    Category = "Programador",
+                    Description = "Descrição xxxxxxxxxxxxxxxxxx",
+                    Price = 1050,
+                    Accepted = 'A'
+                },
+                new Gerenciamento_Lead
+                {
+                    Contact_First_Name = "Elaine",
+                    Contact_Full_Name = "Elaine Bastos",
+                    Contact_Phone_Number = "55-92-988311709",
+                    Contact_Email = "elaine.bastos@outlook.com",
+                    Date_Created = DateTime.UtcNow,
+                    Suburb = "Não sei",
+                    Category = "Gerente de Projetos",
+                    Description = "Descrição xxxxxxxxxxxxxxxxxx",
+                    Price = 2000,
                     Accepted = 'A'
                 }
             );

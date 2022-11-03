@@ -11,6 +11,8 @@ namespace API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,6 +20,7 @@ namespace API
             builder.Services.AddSwaggerGen();
             builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
             builder.Services.AddInfrastructure(builder.Configuration);
+
 
             var app = builder.Build();
 
