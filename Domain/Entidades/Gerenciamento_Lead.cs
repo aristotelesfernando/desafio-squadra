@@ -18,6 +18,7 @@ namespace Domain.Entidades
         public string Category { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public char Accepted { get; set; }
 
         public Gerenciamento_Lead()
         {

@@ -10,6 +10,7 @@ namespace Domain.Interfaces
         Task<Gerenciamento_Lead> GetByEmail(string email);
         Task<Gerenciamento_Lead> GetByFirstName(string firstName);
         Task<IEnumerable<Gerenciamento_Lead>> GetAll();
+        Task<IEnumerable<Gerenciamento_Lead>> GetAllByAccepted(char accepted);
 
         void Add(Gerenciamento_Lead gerenciamento_lead);
         void Update(Gerenciamento_Lead gerenciamento_lead);

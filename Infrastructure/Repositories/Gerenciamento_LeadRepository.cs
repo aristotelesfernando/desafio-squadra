@@ -30,6 +30,11 @@ namespace Infrastructure.Repositories
             return await db.Gerenciamento_Leads.ToListAsync();
         }
 
+        public async Task<IEnumerable<Gerenciamento_Lead>> GetAllByAccepted(char accepted)
+        {
+            return await db.Gerenciamento_Leads.AsNoTracking().Where(q => q.Accepted == accepted).ToListAsync();
+        }
+
         public async Task<Gerenciamento_Lead> GetByEmail(string email)
         {
             return await db.Gerenciamento_Leads.AsNoTracking().FirstOrDefaultAsync(g => g.Contact_Email == email);

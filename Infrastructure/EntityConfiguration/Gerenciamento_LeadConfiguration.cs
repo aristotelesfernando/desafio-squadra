@@ -21,6 +21,7 @@ namespace Infrastructure.EntityConfiguration
             builder.Property(b => b.Category).HasMaxLength(50);
             builder.Property(b => b.Description).HasMaxLength(255);
             builder.Property(b => b.Price).HasColumnType("decimal(10,2)");
+            builder.Property(b => b.Accepted).HasDefaultValue(false);
 
             builder.HasData(
                 new Gerenciamento_Lead
@@ -33,7 +34,8 @@ namespace Infrastructure.EntityConfiguration
                     Suburb = "Não sei",
                     Category = "Seriço doméstico",
                     Description = "Descrição xxxxxxxxxxxxxxxxxx",
-                    Price = 20
+                    Price = 20,
+                    Accepted = 'A'
                 },
                 new Gerenciamento_Lead
                 {
@@ -45,7 +47,8 @@ namespace Infrastructure.EntityConfiguration
                     Suburb = "Não sei",
                     Category = "Pintura",
                     Description = "Descrição xxxxxxxxxxxxxxxxxx",
-                    Price = 100
+                    Price = 100,
+                    Accepted = 'A'
                 },
                 new Gerenciamento_Lead
                 {
@@ -57,7 +60,8 @@ namespace Infrastructure.EntityConfiguration
                     Suburb = "Não sei",
                     Category = "Diarista",
                     Description = "Descrição xxxxxxxxxxxxxxxxxx",
-                    Price = 50
+                    Price = 50,
+                    Accepted = 'A'
                 }
             );
 
